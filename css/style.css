@@ -71,14 +71,13 @@ footer a:visited{
 /*****  End Starter Code ****/
 
 /* Requirement 1 code here*/
-a {
+nav a {
   text-decoration: none;
 }
 /* Requirement 2 code here*/
 
-a:hover {
-  text-decoration-style: wavy;
-  -moz-text-decoration-style: wavy;
+nav a:hover {
+  text-decoration: wavy underline;
 }
 
 a.skip{
@@ -89,19 +88,20 @@ a.skip{
   z-index: 1;
   /* Requirement 3 code here*/
   /* justify-content: flex-start; */
-  position: relative;
-  left: 500px;
+  position: absolute;
+  left: -500px;
 }
 
-
 /* Requirement 4 code here*/
-nav:focus {
-  border-top: 2px yellow;
+nav a:focus {
+  outline: none;
+  border-top: 2px solid yellow;
 }
 
 .container{
   /* Requirement 5 code here*/
-  grid-template-columns: 1fr 5fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr, 5fr, 1fr;
   row-gap: 30px;
 }
 
@@ -111,35 +111,53 @@ nav:focus {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background: #707070 url(images/header.jpg);
+  background-image: url("../images/header.jpg");
   min-height: 400px;
+}
+
+img {
+  width: 100%;
+}
+
+.about, .clients, .method, .contact {
+  align-self: center;
+  grid-column: 2 / 3;
 }
 
 .about-image, .clients-image, .method-image, .contact-image {
   grid-column: 1 / span 3;
   max-height: 500px;
-}
-
-.about, .clients, .method, .contact {
-  grid-column: 2;
-}
-
-.img {
-  width: 100px;
+  overflow: hidden;
 }
 
 .text {
-  align-content: center;
-  max-height: 25%vh;
+  align-self: center;
+  max-height: 25vh;
   overflow: scroll;
+}
+
+.about, .about-image {
+  grid-row: 1 / 2;
+}
+
+.clients, .clients-image {
+  grid-row: 2 / 3;
+}
+
+.method, .method-image {
+  grid-row: 3 / 4;
+}
+
+.contact, .contact-image {
+  grid-row: 4 / 5;
 }
 
 @media screen and (min-width: 700px){
   nav{
     padding-top: 35px;
-    align-items: right;
+    /* align-items: right; */
     /*Requirement 11*/
-    float: right;
+    text-align: right;
   }
 
   nav li{
@@ -150,8 +168,9 @@ nav:focus {
   
   /* Requirements 12-15 here: */
   .containter {
-    grid-template-columns: 50px auto 500px auto 50px;
-    grid-template-rows: 300px 300px 300px 300px;
+    display: grid;
+    grid-template-columns: 50px, auto, 500px, auto, 50px;
+    grid-template-rows: 300px, 300px, 300px, 300px;
   }
   
   .about, .method, .clients-image, .contact-image {
@@ -162,9 +181,16 @@ nav:focus {
     grid-column: 2 / span 2;
   }
 
-  .skip:focus {
+  /* .skip:focus {
     margin-left: 0px;
     margin-top: 20px;
+  } */
+
+  a[href="#main"]:focus {
+    top: 20px;
+    outline: none;
+    left: initial;
+    border-top: 2px solid yellow;
   }
 
 }
