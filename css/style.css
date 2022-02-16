@@ -101,7 +101,7 @@ nav a:focus {
 .container{
   /* Requirement 5 code here*/
   display: grid;
-  grid-template-columns: 1fr, 5fr, 1fr;
+  grid-template-columns: 1fr 5fr 1fr;
   row-gap: 30px;
 }
 
@@ -164,13 +164,12 @@ img {
     margin-left: 5%;
     margin-right:0;
   }
-
   
   /* Requirements 12-15 here: */
   .containter {
     display: grid;
-    grid-template-columns: 50px, auto, 500px, auto, 50px;
-    grid-template-rows: 300px, 300px, 300px, 300px;
+    grid-template-columns: 50px auto 500px auto 50px;
+    grid-template-rows: 300px 300px 300px 300px;
   }
   
   .about, .method, .clients-image, .contact-image {
