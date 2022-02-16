@@ -87,7 +87,6 @@ a.skip{
   transition: left 1s ease-out;
   z-index: 1;
   /* Requirement 3 code here*/
-  /* justify-content: flex-start; */
   position: absolute;
   left: -500px;
 }
@@ -100,7 +99,7 @@ nav a:focus {
 
 .container{
   /* Requirement 5 code here*/
-  display: grid;
+  display: grid !important;
   grid-template-columns: 1fr 5fr 1fr;
   row-gap: 30px;
 }
@@ -112,6 +111,7 @@ nav a:focus {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("../images/header.jpg");
+  background-color: #707070;
   min-height: 400px;
 }
 
@@ -155,7 +155,6 @@ img {
 @media screen and (min-width: 700px){
   nav{
     padding-top: 35px;
-    /* align-items: right; */
     /*Requirement 11*/
     text-align: right;
   }
@@ -167,7 +166,7 @@ img {
   
   /* Requirements 12-15 here: */
   .containter {
-    display: grid;
+    display: grid !important;
     grid-template-columns: 50px auto 500px auto 50px;
     grid-template-rows: 300px 300px 300px 300px;
   }
@@ -179,11 +178,6 @@ img {
   .clients, .contact, .about-image, .method-image {
     grid-column: 2 / span 2;
   }
-
-  /* .skip:focus {
-    margin-left: 0px;
-    margin-top: 20px;
-  } */
 
   a[href="#main"]:focus {
     top: 20px;
